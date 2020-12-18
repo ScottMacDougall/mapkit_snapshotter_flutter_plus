@@ -8,7 +8,7 @@ default [Image](https://api.flutter.dev/flutter/widgets/Image-class.html) Widget
 
 | Example 1 (Standard) | Example 2 (Hybrid) |
 | --- | --- |
-| ![](docs/images/demo_screenshot_1.png "MapKit Snapshotter example with standard map type") | ![](docs/images/demo_screenshot_2.png "MapKit Snapshotter example with hybrid map type") |
+| ![](https://github.com/AurityLab/mapkit_snapshotter_flutter/raw/master/docs/images/demo_screenshot_1.png "MapKit Snapshotter example with standard map type") | ![](https://github.com/AurityLab/mapkit_snapshotter_flutter/raw/master/docs/images/demo_screenshot_2.png "MapKit Snapshotter example with hybrid map type") |
 
 ## Usage
 
