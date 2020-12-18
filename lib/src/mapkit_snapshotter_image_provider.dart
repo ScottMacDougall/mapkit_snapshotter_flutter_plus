@@ -19,16 +19,29 @@ class MapKitSnapshotterImageProvider
   @override
   ImageStreamCompleter load(MapKitSnapshotterImageProviderKey key, decode) {
     return OneFrameImageStreamCompleter(Future(() async {
-      final t = await _channel.invokeMethod('capture', key.toJson());
+      // Capture the screenshot on the iOS native side.
+      final captureResponse = await _channel.invokeMethod(
+        'capture',
+        key.toJson(),
+      );
 
-      final buffer = await ui.ImmutableBuffer.fromUint8List(t);
+      // Return null if the response si null.
+      if (captureResponse == null) {
+        return null;
+      }
 
-      final desc = await ui.ImageDescriptor.encoded(buffer);
+      final desc = await ui.ImageDescriptor.encoded(
+        await ui.ImmutableBuffer.fromUint8List(captureResponse),
+      );
 
       final codec = await desc.instantiateCodec();
-      final image = (await codec.getNextFrame()).image;
+      final frame = await codec.getNextFrame();
+      final image = frame.image;
 
-      return ImageInfo(image: image);
+      return ImageInfo(
+        image: image,
+        scale: key.devicePixelRatio,
+      );
     }));
   }
 

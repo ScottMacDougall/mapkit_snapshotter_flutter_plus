@@ -33,7 +33,7 @@ class MapKitSnapshotterOptions {
     this.brightness,
     this.showsBuildings,
     this.showsPointsOfInterest,
-  });
+  }) : assert(region != null);
 
   factory MapKitSnapshotterOptions.fromJson(Map<String, dynamic> json) =>
       _$MapKitSnapshotterOptionsFromJson(json);
@@ -171,7 +171,10 @@ class MapKitSnapshotterImageProviderKey {
     @required this.sizeWidth,
     @required this.options,
     @required this.devicePixelRatio,
-  });
+  })  : assert(sizeHeight != null),
+        assert(sizeWidth != null),
+        assert(options != null),
+        assert(devicePixelRatio != null);
 
   factory MapKitSnapshotterImageProviderKey.fromJson(
           Map<String, dynamic> json) =>
