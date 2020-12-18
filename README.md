@@ -20,12 +20,14 @@ Usage example:
 final widget = Image(
   image: MapKitSnapshotterImage(
     MapKitSnapshotterOptions(
+      /// Defines the region to capture.
       region: MapKitSnapshotterRegion(
         centerLatitude: 53.552363,
         centerLongitude: 9.990831,
         latitudeMeters: 2000,
         longitudeMeters: 2000,
       ),
+      /// Additional properties for the snapshot.
       brightness: MapKitSnapshotterBrightness.light,
       mapType: MapKitSnapshotterMapType.hybridFlyover,
     ),
@@ -36,3 +38,9 @@ final widget = Image(
 
 /// ... Use your widget
 ```
+
+## Features and bugs
+
+Please file feature requests and bugs at the [issue tracker][tracker].
+
+[tracker]: https://github.com/AurityLab/mapkit_snapshotter_flutter/issues
