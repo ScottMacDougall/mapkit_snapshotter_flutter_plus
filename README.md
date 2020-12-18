@@ -1,15 +1,38 @@
-# mapkit_snapshotter_flutter
+# MapKit Snapshotter
 
-A new flutter plugin project.
+A Flutter plugin which provides
+the [MKMapScreenshoter](https://developer.apple.com/documentation/mapkit/mkmapsnapshotter). This integrates with the
+default [Image](https://api.flutter.dev/flutter/widgets/Image-class.html) Widget of Flutter.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+| Example 1 (Standard) | Example 2 (Hybrid) |
+| --- | --- |
+| ![](docs/images/demo_screenshot_1.png "MapKit Snapshotter example with standard map type") | ![](docs/images/demo_screenshot_2.png "MapKit Snapshotter example with hybrid map type") |
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
 
+**This plugin is only available on iOS as it uses the MapKit SDK.**
+
+Usage example:
+
+```dart
+final widget = Image(
+  image: MapKitSnapshotterImage(
+    MapKitSnapshotterOptions(
+      region: MapKitSnapshotterRegion(
+        centerLatitude: 53.552363,
+        centerLongitude: 9.990831,
+        latitudeMeters: 2000,
+        longitudeMeters: 2000,
+      ),
+      brightness: MapKitSnapshotterBrightness.light,
+      mapType: MapKitSnapshotterMapType.hybridFlyover,
+    ),
+  ),
+  height: 100,
+  width: 100,
+);
+
+/// ... Use your widget
+```
