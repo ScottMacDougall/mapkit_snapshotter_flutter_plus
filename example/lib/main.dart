@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mapkit_snapshotter_flutter/mapkit_snapshotter_flutter.dart';
+import 'package:mapkit_snapshotter_flutter_example/demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -92,6 +93,19 @@ class _MyAppState extends State<MyApp> {
                       setState(() {
                         showsPointsOfIntereset = !showsPointsOfIntereset;
                       });
+                    },
+                  ),
+                  Builder(
+                    builder: (context) {
+                      return MaterialButton(
+                        child: Text('Open demo'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DemoRoute()));
+                        },
+                      );
                     },
                   ),
                 ],
