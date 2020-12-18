@@ -5,11 +5,10 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:mapkit_snapshotter_flutter/src/mapkit_snapshotter_types.dart';
 
-
 class MapKitSnapshotterImage
     extends ImageProvider<MapKitSnapshotterImageProviderKey> {
   static const MethodChannel _channel =
-      const MethodChannel('mapkit_snapshotter_flutter');
+      MethodChannel('mapkit_snapshotter_flutter');
 
   /// Defines the options for the capture. This is required as it contains
   /// information about the region to capture.

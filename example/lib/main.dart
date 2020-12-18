@@ -48,8 +48,8 @@ class _MyAppState extends State<MyApp> {
               ),
               Column(
                 children: [
-                  Text("Brightness: ${brightness.toString()}"),
-                  Text("Map type: ${MapKitSnapshotterMapType.values[mapType]}"),
+                  Text('Brightness: ${brightness.toString()}'),
+                  Text('Map type: ${MapKitSnapshotterMapType.values[mapType]}'),
                 ],
               ),
               Column(
@@ -60,8 +60,9 @@ class _MyAppState extends State<MyApp> {
                       setState(() {
                         var brightness = MapKitSnapshotterBrightness.light;
                         if (this.brightness ==
-                            MapKitSnapshotterBrightness.light)
+                            MapKitSnapshotterBrightness.light) {
                           brightness = MapKitSnapshotterBrightness.dark;
+                        }
 
                         this.brightness = brightness;
                       });
@@ -72,8 +73,9 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () {
                       setState(() {
                         mapType++;
-                        if (mapType >= MapKitSnapshotterMapType.values.length)
+                        if (mapType >= MapKitSnapshotterMapType.values.length) {
                           mapType = 0;
+                        }
                       });
                     },
                   ),
