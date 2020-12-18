@@ -5,6 +5,29 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:mapkit_snapshotter_flutter/src/mapkit_snapshotter_types.dart';
 
+/// Provides the MapKit Snapshow based on the given [options].
+///
+/// Usage:
+/// ```dart
+/// final widget = Image(
+///   image: MapKitSnapshotterImage(
+///     MapKitSnapshotterOptions(
+///       /// Defines the region to capture.
+///       region: MapKitSnapshotterRegion(
+///         centerLatitude: 53.552363,
+///         centerLongitude: 9.990831,
+///         latitudeMeters: 2000,
+///         longitudeMeters: 2000,
+///       ),
+///       /// Additional properties for the snapshot.
+///       brightness: MapKitSnapshotterBrightness.light,
+///       mapType: MapKitSnapshotterMapType.hybridFlyover,
+///     ),
+///   ),
+///   height: 100,
+///   width: 100,
+/// );
+/// ```
 class MapKitSnapshotterImage
     extends ImageProvider<MapKitSnapshotterImageProviderKey> {
   static const MethodChannel _channel =
