@@ -5,7 +5,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:mapkit_snapshotter_flutter/src/mapkit_snapshotter_types.dart';
 
-class MapKitSnapshotterImageProvider
+
+class MapKitSnapshotterImage
     extends ImageProvider<MapKitSnapshotterImageProviderKey> {
   static const MethodChannel _channel =
       const MethodChannel('mapkit_snapshotter_flutter');
@@ -14,7 +15,7 @@ class MapKitSnapshotterImageProvider
   /// information about the region to capture.
   final MapKitSnapshotterOptions options;
 
-  MapKitSnapshotterImageProvider(this.options) : assert(options != null);
+  MapKitSnapshotterImage(this.options) : assert(options != null);
 
   @override
   ImageStreamCompleter load(MapKitSnapshotterImageProviderKey key, decode) {
@@ -49,11 +50,13 @@ class MapKitSnapshotterImageProvider
   Future<MapKitSnapshotterImageProviderKey> obtainKey(
     ImageConfiguration configuration,
   ) {
+    // The configuration does not always provide all values, therefore we need
+    // to define some defaults.
     return Future.value(MapKitSnapshotterImageProviderKey(
-      sizeHeight: configuration.size.height,
-      sizeWidth: configuration.size.width,
+      sizeHeight: configuration.size?.height ?? 400,
+      sizeWidth: configuration.size?.width ?? 400,
+      devicePixelRatio: configuration.devicePixelRatio ?? 1,
       options: options,
-      devicePixelRatio: configuration.devicePixelRatio,
     ));
   }
 }

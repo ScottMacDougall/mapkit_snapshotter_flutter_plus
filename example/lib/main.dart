@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Image(
-                image: MapKitSnapshotterImageProvider(
+                image: MapKitSnapshotterImage(
                   MapKitSnapshotterOptions(
                     region: MapKitSnapshotterRegion(
                       centerLatitude: 53.552363,
