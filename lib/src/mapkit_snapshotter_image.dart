@@ -37,7 +37,7 @@ class MapKitSnapshotterImage
   /// information about the region to capture.
   final MapKitSnapshotterOptions options;
 
-  MapKitSnapshotterImage(this.options) : assert(options != null);
+  MapKitSnapshotterImage(this.options);
 
   @override
   ImageStreamCompleter load(MapKitSnapshotterImageProviderKey key, decode) {
@@ -50,7 +50,7 @@ class MapKitSnapshotterImage
 
       // Return null if the response si null.
       if (captureResponse == null) {
-        return null;
+        throw StateError('Failed to take snapshot');
       }
 
       final desc = await ui.ImageDescriptor.encoded(

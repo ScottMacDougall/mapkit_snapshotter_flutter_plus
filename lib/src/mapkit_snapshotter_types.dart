@@ -14,26 +14,26 @@ class MapKitSnapshotterOptions {
   /// Defines the map type for the capture.
   /// By default [MapKitSnapshotterMapType.standard] will be used.
   @JsonKey(toJson: _mapTypeToJson)
-  final MapKitSnapshotterMapType mapType;
+  final MapKitSnapshotterMapType? mapType;
 
   /// Defines the brightness of the map for the capture.
   /// By default the current system default is used.
   @JsonKey(toJson: _brightnessToJson)
-  final MapKitSnapshotterBrightness brightness;
+  final MapKitSnapshotterBrightness? brightness;
 
   /// If buildings shall be show on the capture.
-  final bool showsBuildings;
+  final bool? showsBuildings;
 
   /// If POIs shall be shown on the capture.
-  final bool showsPointsOfInterest;
+  final bool? showsPointsOfInterest;
 
   MapKitSnapshotterOptions({
-    @required this.region,
+    required this.region,
     this.mapType,
     this.brightness,
     this.showsBuildings,
     this.showsPointsOfInterest,
-  }) : assert(region != null);
+  });
 
   factory MapKitSnapshotterOptions.fromJson(Map<String, dynamic> json) =>
       _$MapKitSnapshotterOptionsFromJson(json);
@@ -70,12 +70,12 @@ class MapKitSnapshotterOptions {
   }
 
   /// Will encode the given value to the json representation.
-  static int _brightnessToJson(MapKitSnapshotterBrightness brightness) {
+  static int? _brightnessToJson(MapKitSnapshotterBrightness? brightness) {
     return brightness?.index;
   }
 
   /// Will encode the given value to the json representation.
-  static int _mapTypeToJson(MapKitSnapshotterMapType mapType) {
+  static int? _mapTypeToJson(MapKitSnapshotterMapType? mapType) {
     return mapType?.index;
   }
 }
@@ -117,14 +117,11 @@ class MapKitSnapshotterRegion {
   final double longitudeMeters;
 
   MapKitSnapshotterRegion({
-    @required this.centerLatitude,
-    @required this.centerLongitude,
-    @required this.latitudeMeters,
-    @required this.longitudeMeters,
-  })  : assert(centerLatitude != null),
-        assert(centerLongitude != null),
-        assert(latitudeMeters != null),
-        assert(longitudeMeters != null);
+    required this.centerLatitude,
+    required this.centerLongitude,
+    required this.latitudeMeters,
+    required this.longitudeMeters,
+  });
 
   factory MapKitSnapshotterRegion.fromJson(Map<String, dynamic> json) =>
       _$MapKitSnapshotterRegionFromJson(json);
@@ -167,14 +164,11 @@ class MapKitSnapshotterImageProviderKey {
   final MapKitSnapshotterOptions options;
 
   MapKitSnapshotterImageProviderKey({
-    @required this.sizeHeight,
-    @required this.sizeWidth,
-    @required this.options,
-    @required this.devicePixelRatio,
-  })  : assert(sizeHeight != null),
-        assert(sizeWidth != null),
-        assert(options != null),
-        assert(devicePixelRatio != null);
+    required this.sizeHeight,
+    required this.sizeWidth,
+    required this.options,
+    required this.devicePixelRatio,
+  });
 
   factory MapKitSnapshotterImageProviderKey.fromJson(
           Map<String, dynamic> json) =>
