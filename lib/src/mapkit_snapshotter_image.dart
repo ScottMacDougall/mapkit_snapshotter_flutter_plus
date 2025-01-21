@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
-import 'package:mapkit_snapshotter_flutter/src/mapkit_snapshotter_types.dart';
+import 'package:mapkit_snapshotter_flutter_plus/src/mapkit_snapshotter_types.dart';
 
 /// Provides the MapKit Snapshow based on the given [options].
 ///
@@ -31,7 +31,7 @@ import 'package:mapkit_snapshotter_flutter/src/mapkit_snapshotter_types.dart';
 class MapKitSnapshotterImage
     extends ImageProvider<MapKitSnapshotterImageProviderKey> {
   static const MethodChannel _channel =
-      MethodChannel('mapkit_snapshotter_flutter');
+      MethodChannel('mapkit_snapshotter_flutter_plus');
 
   /// Defines the options for the capture. This is required as it contains
   /// information about the region to capture.
@@ -40,7 +40,10 @@ class MapKitSnapshotterImage
   MapKitSnapshotterImage(this.options);
 
   @override
-  ImageStreamCompleter load(MapKitSnapshotterImageProviderKey key, decode) {
+  ImageStreamCompleter loadImage(
+    MapKitSnapshotterImageProviderKey key,
+    decode,
+  ) {
     return OneFrameImageStreamCompleter(Future(() async {
       // Capture the screenshot on the iOS native side.
       final captureResponse = await _channel.invokeMethod(

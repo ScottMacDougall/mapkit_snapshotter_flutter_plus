@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint mapkit_snapshotter_flutter.podspec' to validate before publishing.
+# Run `pod lib lint mapkit_snapshotter_flutter_plus.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'mapkit_snapshotter_flutter'
+  s.name             = 'mapkit_snapshotter_flutter_plus'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC

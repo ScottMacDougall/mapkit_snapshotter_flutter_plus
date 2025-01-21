@@ -27,7 +27,7 @@ class MapKitSnapshotterOptions {
   /// If POIs shall be shown on the capture.
   final bool? showsPointsOfInterest;
 
-  MapKitSnapshotterOptions({
+  const MapKitSnapshotterOptions({
     required this.region,
     this.mapType,
     this.brightness,
@@ -35,8 +35,7 @@ class MapKitSnapshotterOptions {
     this.showsPointsOfInterest,
   });
 
-  factory MapKitSnapshotterOptions.fromJson(Map<String, dynamic> json) =>
-      _$MapKitSnapshotterOptionsFromJson(json);
+  factory MapKitSnapshotterOptions.fromJson(Map<String, dynamic> json) => _$MapKitSnapshotterOptionsFromJson(json);
 
   Map<String, dynamic> toJson() => _$MapKitSnapshotterOptionsToJson(this);
 
@@ -52,12 +51,7 @@ class MapKitSnapshotterOptions {
           showsPointsOfInterest == other.showsPointsOfInterest;
 
   @override
-  int get hashCode =>
-      region.hashCode ^
-      mapType.hashCode ^
-      brightness.hashCode ^
-      showsBuildings.hashCode ^
-      showsPointsOfInterest.hashCode;
+  int get hashCode => region.hashCode ^ mapType.hashCode ^ brightness.hashCode ^ showsBuildings.hashCode ^ showsPointsOfInterest.hashCode;
 
   @override
   String toString() {
@@ -116,15 +110,14 @@ class MapKitSnapshotterRegion {
   final double latitudeMeters;
   final double longitudeMeters;
 
-  MapKitSnapshotterRegion({
+  const MapKitSnapshotterRegion({
     required this.centerLatitude,
     required this.centerLongitude,
     required this.latitudeMeters,
     required this.longitudeMeters,
   });
 
-  factory MapKitSnapshotterRegion.fromJson(Map<String, dynamic> json) =>
-      _$MapKitSnapshotterRegionFromJson(json);
+  factory MapKitSnapshotterRegion.fromJson(Map<String, dynamic> json) => _$MapKitSnapshotterRegionFromJson(json);
 
   Map<String, dynamic> toJson() => _$MapKitSnapshotterRegionToJson(this);
 
@@ -139,11 +132,7 @@ class MapKitSnapshotterRegion {
           longitudeMeters == other.longitudeMeters;
 
   @override
-  int get hashCode =>
-      centerLatitude.hashCode ^
-      centerLongitude.hashCode ^
-      latitudeMeters.hashCode ^
-      longitudeMeters.hashCode;
+  int get hashCode => centerLatitude.hashCode ^ centerLongitude.hashCode ^ latitudeMeters.hashCode ^ longitudeMeters.hashCode;
 
   @override
   String toString() {
@@ -163,19 +152,16 @@ class MapKitSnapshotterImageProviderKey {
   final double devicePixelRatio;
   final MapKitSnapshotterOptions options;
 
-  MapKitSnapshotterImageProviderKey({
+  const MapKitSnapshotterImageProviderKey({
     required this.sizeHeight,
     required this.sizeWidth,
     required this.options,
     required this.devicePixelRatio,
   });
 
-  factory MapKitSnapshotterImageProviderKey.fromJson(
-          Map<String, dynamic> json) =>
-      _$MapKitSnapshotterImageProviderKeyFromJson(json);
+  factory MapKitSnapshotterImageProviderKey.fromJson(Map<String, dynamic> json) => _$MapKitSnapshotterImageProviderKeyFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$MapKitSnapshotterImageProviderKeyToJson(this);
+  Map<String, dynamic> toJson() => _$MapKitSnapshotterImageProviderKeyToJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -188,11 +174,7 @@ class MapKitSnapshotterImageProviderKey {
           options == other.options;
 
   @override
-  int get hashCode =>
-      sizeHeight.hashCode ^
-      sizeWidth.hashCode ^
-      devicePixelRatio.hashCode ^
-      options.hashCode;
+  int get hashCode => sizeHeight.hashCode ^ sizeWidth.hashCode ^ devicePixelRatio.hashCode ^ options.hashCode;
 
   @override
   String toString() {

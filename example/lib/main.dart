@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mapkit_snapshotter_flutter/mapkit_snapshotter_flutter.dart';
-import 'package:mapkit_snapshotter_flutter_example/demo.dart';
+import 'package:mapkit_snapshotter_flutter_plus/mapkit_snapshotter_flutter_plus.dart';
+
+import 'demo.dart';
 
 void main() {
   runApp(MyApp());

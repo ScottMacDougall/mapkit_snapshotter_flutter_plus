@@ -1,22 +1,22 @@
 PODS:
   - Flutter (1.0.0)
-  - mapkit_snapshotter_flutter (0.0.1):
+  - mapkit_snapshotter_flutter_plus (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - mapkit_snapshotter_flutter (from `.symlinks/plugins/mapkit_snapshotter_flutter/ios`)
+  - mapkit_snapshotter_flutter_plus (from `.symlinks/plugins/mapkit_snapshotter_flutter_plus/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  mapkit_snapshotter_flutter:
-    :path: ".symlinks/plugins/mapkit_snapshotter_flutter/ios"
+  mapkit_snapshotter_flutter_plus:
+    :path: ".symlinks/plugins/mapkit_snapshotter_flutter_plus/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  mapkit_snapshotter_flutter: e0e409e148be7f41e414b9ffce0101618d8806f7
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  mapkit_snapshotter_flutter_plus: 9667c8ecfdbe98b2c82d1d4f413ca6a4cef69216
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2

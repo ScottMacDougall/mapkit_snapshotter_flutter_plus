@@ -1,6 +1,6 @@
 //
 //  MapKitSnapshotterUtils.swift
-//  mapkit_snapshotter_flutter
+//  mapkit_snapshotter_flutter_plus
 //
 //  Created by Andre Loreth on 18.12.20.
 //
@@ -82,7 +82,7 @@ class MapKitSnapshotterDecoder {
         if let showsPointsOfInterest = decodeBoolean(arguments: arguments, key: kShowsPointsOfInterest) {
             options.showsPointsOfInterest = showsPointsOfInterest
         }
-        
+
         return options
     }
     
